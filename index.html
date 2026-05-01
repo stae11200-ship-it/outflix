@@ -522,80 +522,13 @@ html,body {
 }
 
 
-/* ── 오프닝 ── */
-#screen-opening {
-  background: #000;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  cursor: none;
-}
-.op-logo-wrap {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transform: scale(0.8);
-}
-.op-logo-text {
-  font-family: "Arial Black", "Arial", sans-serif;
-  font-size: 120px;
-  font-weight: 900;
-  letter-spacing: -4px;
-  color: #E50914;
-  position: relative;
-  z-index: 2;
-  -webkit-font-smoothing: antialiased;
-}
-.op-bottom-bar {
-  position: absolute;
-  bottom: -10px;
-  left: 0; right: 0;
-  height: 12px;
-  background: #E50914;
-  transform: scaleX(0);
-  transform-origin: center;
-  border-radius: 2px;
-}
-.op-glow {
-  position: absolute;
-  width: 800px; height: 400px;
-  background: radial-gradient(ellipse, rgba(229,9,20,0.12) 0%, transparent 70%);
-  border-radius: 50%;
-  opacity: 0;
-  pointer-events: none;
-}
-.op-overlay {
-  position: absolute;
-  inset: 0;
-  background: #000;
-  opacity: 1;
-  pointer-events: none;
-  z-index: 50;
-}
+
 
 </style>
 </head>
 <body>
 
 
-
-<!-- 오프닝 -->
-<div id="screen-opening" class="screen" style="display:none!important" style="background:#000;cursor:none;">
-  <video id="openingVideo"
-    style="width:100%;height:100%;object-fit:cover;"
-    autoplay muted playsinline
-    src="videos/opening.mp4">
-  </video>
-</div>
-
-  <div class="op-logo-wrap" id="opLogoWrap">
-    <div class="op-logo-text">OURFLIX</div>
-    <div class="op-bottom-bar" id="opBottomBar"></div>
-  </div>
-  <div class="op-overlay" id="opOverlay"></div>
-</div>
 
 <!-- 프로필 선택 -->
 <div id="screen-profile" class="screen active">
