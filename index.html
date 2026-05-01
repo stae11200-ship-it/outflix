@@ -940,37 +940,14 @@ html,body {
 // ── OURFLIX 오프닝 (영상) ──────────────────
 (function() {
   const video = document.getElementById('openingVideo');
-  const opening = document.getElementById('screen-opening');
-
-  function goToProfile() {
+  video.addEventListener('ended', function() {
     showScreen('screen-profile');
-  }
-
-  // 영상 끝나면 프로필로
-  video.addEventListener('ended', goToProfile);
-
-  // 클릭/탭하면 영상 재생 시도, 안되면 바로 프로필로
-  opening.addEventListener('click', function() {
-    if (video.paused) {
-      video.play().catch(() => goToProfile());
-    }
   });
-
-  // 자동재생 시도
-  video.play().catch(() => {
-    // 자동재생 실패시 탭 안내 텍스트 표시
-    const hint = document.createElement('div');
-    hint.style.cssText = 'position:absolute;bottom:60px;left:50%;transform:translateX(-50%);color:rgba(255,255,255,0.5);font-family:sans-serif;font-size:14px;letter-spacing:3px;z-index:200;white-space:nowrap;';
-    hint.textContent = 'TAP TO START';
-    opening.appendChild(hint);
-  });
-
-  // 5초 후 자동 전환 (영상 안 재생되는 경우)
-  setTimeout(() => {
-    if (opening.classList.contains('active')) {
-      goToProfile();
+  setTimeout(function() {
+    if (document.getElementById('screen-opening').classList.contains('active')) {
+      showScreen('screen-profile');
     }
-  }, 5000);
+  }, 10000);
 })();
 
 
